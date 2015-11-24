@@ -1,8 +1,7 @@
-// Surface_area_per_residue_2.cpp : Defines the entry point for the console application.
+// Surface_area_per_residue_2.cpp 
 //
 
-// monomers.cpp : Defines the entry point for the console application.
-//
+
 #include "stdafx.h"
 #include "windows.h"
 #include <fstream>
@@ -42,8 +41,6 @@ void transforms(string a, int &br, int x, int y)
     br = atoi(numb);
 }
 
-
-
 int main(int arcg, char* argv[])
 {
    char readln[256];   
@@ -61,27 +58,8 @@ int main(int arcg, char* argv[])
    int current_residue;
    char sub = '^';
    
-   /*
-   WIN32_FIND_DATA FileData; 
-   HANDLE hSearch; 
-   */
-
    vector<char> chain;
    
-   /*
-   char* dir1="C:\\Articles\\decoy\\baker";
-   char* dir2="C:\\Articles\\decoy\\baker\\results";
-   */
-  
-   /*
-   char* dir1 = "C:\\MBRB\\MOAD\\BindingMoad2005";
-   char* dir2 = "C:\\MBRB\\MOAD\\BindingMoad2005\\results";
-   */
-
-   /*char* dir1 = "c:\\GNM\\FILES\\DIMER-1\\heterodimer\\";
-   char* dir2 = "c:\\GNM\\FILES\\DIMER-1\\heterodimer\\test";*/
-
-
    
    int i = 0;
    FILE* out;   
@@ -124,12 +102,7 @@ int main(int arcg, char* argv[])
    }   
 
    fin.close();
-   /*
-   for(i = 0; i<chain.size(); i++)
-   {
-       printf("Chain %3c\n", chain[i]);
-   }
-   */
+  
    
    for(int p = 0; p <chain.size(); p++)
    {
@@ -151,7 +124,6 @@ int main(int arcg, char* argv[])
        previous_residue = -100;
        write = true;
        
-       //_chdir(dir2);
        out = fopen(file_name,"w");
        
        while (fin.getline(readln, 256))
@@ -202,8 +174,7 @@ int main(int arcg, char* argv[])
        printf("%s\n", program);
    
        WinExec(program, SW_SHOWNORMAL);
-       //_chdir(dir1);
-   }
+    }
    
    return 0;
 }
