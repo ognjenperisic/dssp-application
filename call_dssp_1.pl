@@ -8,14 +8,12 @@ opendir DH, $dir_to_process or die "Cannot open $dir_to_process: $!";
 foreach $file (readdir DH) {
       
       $_ = "\"$file\"";
-      
                      
      if(/(^[1-9])*.pdb/)
       {
             print "Processing pdb file $_!\n";            
             system "Surface_area_per_residue_2.exe", "$_"; 
       }
-      
       
       if(/.dssp/)
       {
