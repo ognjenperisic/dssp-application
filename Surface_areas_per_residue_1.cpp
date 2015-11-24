@@ -28,7 +28,6 @@ void transforms(string a, float &br, int x, int y)
     br = atof(numb);
 }
 
-
 void transforms(string a, int &br, int x, int y)
 {
     char numb[256] = "";    
@@ -39,11 +38,6 @@ void transforms(string a, int &br, int x, int y)
     
     br = atoi(numb);
 }
-
-
-
-
-
 
 
 int main(int arcg, char* argv[])
@@ -57,22 +51,15 @@ int main(int arcg, char* argv[])
    int pdb_res_numb;
    int res = 0;
    
-   /*
-   WIN32_FIND_DATA FileData; 
-   HANDLE hSearch; 
-   */
- 
    
    char* dir1 = "";
    char* dir2 = "results\\";
    
 
-
    int i = 0;
    int old_pdb;
    int temp_pdb;
    FILE* out;   
-   //BOOL fFinished = FALSE; 
    BOOL analyze = FALSE;
    
    ifstream fin(argv[1]);
@@ -127,26 +114,11 @@ int main(int arcg, char* argv[])
 
                    old_pdb = pdb_res_numb;
                }
-               //getche();
            }
-           /*
-           else 
-           {
-           if ((line.substr(0,15)!="  #  RESIDUE AA")&(analyze)&(line.substr(13,1)=="!"))
-           {
-           transforms(line,temp_pdb,7,3);
-           if (temp_pdb!=old_pdb)
-           {
-           printf("$");
-           }
-           }
-           }
-           */
    }
    fin.close();
    fclose(out);
-   //_chdir(dir1);  
-   
+  
    return 0;
 }
 
